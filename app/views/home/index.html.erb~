@@ -1,0 +1,30 @@
+<h1>Здесь я буду експерементировать</h1>
+
+<%@items.each do |i| %>
+
+ <%=i.item_id%><br>
+<%end%>
+
+++++++++++++++++++Товар+++++++++++++++++++
+<form method=POST>
+     <br> <br>
+
+    Имя <input type=texte name="name_item"> <br> 
+    описание <input type=texte name="description"> <br>
+
+    цена <input type=texte name="cost"> <br>
+
+       <input name="commit_item" type="submit" value="Nagmi" />     
+     
+   </form><br>
+
+++++++++++++++++++Покупатель+++++++++++++++++++
+<form method=POST>
+     <br> <br>
+
+    Имя <input type=texte name="name"> <br> 
+    Возраст <input type=texte name="age"> <br>
+     <input name="commit" type="submit" value="Nagmi" />     
+     
+   </form>
+

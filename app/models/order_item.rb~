@@ -1,0 +1,32 @@
+class OrderItem < ActiveRecord::Base
+  attr_accessible :item_id, :order_id
+   belongs_to :item 
+   belongs_to :order 
+
+   
+
+
+
+
+private
+#**************************************************************
+def add_items
+
+  # забираю итемсы по последнему id order
+   order = Order.order('id desc').first
+   
+   or_item=OrderItem.where('order_id = ?', order.id)
+  # по item_id выбираю items и приплюсовываю popular в итемсе 
+
+   or_item.each do |i|
+       m=Item.find_by_id(i.item_id)
+       m.popular=1 if m.popular == nil
+       m.popular+=1 if m.popular != nil
+       m.save
+  
+  end
+
+#************************************************************   
+end
+
+end
