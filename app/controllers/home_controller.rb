@@ -21,7 +21,12 @@ class HomeController < ApplicationController
   
   #@costomer= Costomer.find_by_id(7)
   #@costomer = Costomer.find_by_id(5)
-  @items = Item.top_item(3) 
+
+  @costomer = Costomer.create(:name=>"Nindja5",:age=>23)
+  @order = @costomer.order.create
+  @item = @costomer.item.create(:name=>"name",:description=>"description",:cost=>10.10) 
+  @costomer.save
+  #@items = Item.top_item(3) 
   #@costomer.order.create(:item_id=>'4')
  
   #@items = Costomer.loyalty 

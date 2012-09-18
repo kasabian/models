@@ -7,7 +7,7 @@ class Costomer < ActiveRecord::Base
   has_many :order
   has_many :item, :through => :order
   # программа лояльности
-  def  self.loyalty 
+  def  self.loyalty  
     arr=[]
     order= Order.where('created_at > ?', 90.days.ago)
     
